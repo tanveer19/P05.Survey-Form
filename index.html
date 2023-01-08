@@ -1,87 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey form</title>
     <style>
-        body {
-            background-image: url(bora.jpg);
-            /* background-size: cover; */
-        }
+      body {
+        background-image: url(bora.jpg);
+        display: flex;
+        justify-content: center;
+      }
 
-        #main {
-            width: 30%;
-            background-color: skyblue;
-            margin: 10% 0 0 40%;
-            text-align: center;
-            border-radius: 25px;
-        }
+      #main {
+        background-color: skyblue;
+        text-align: center;
+        border-radius: 25px;
+        min-width: 300px;
+        margin-top: 5%;
+      }
 
-        #number {
-            width: 100px;
-        }
+      #number {
+        width: 100px;
+      }
 
-        textarea {
-            /* display: block; */
-        }
+      #name:focus {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .radio label,
+      .checkbox label {
+        display: inline-block;
+        width: 100px;
+        text-align: left;
+      }
+
+      textarea {
+        display: flex;
+        justify-content: center;
+        margin-left: 10%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="main">
-        <h1 id="title">Survey Form</h1>
-        <p id="description">Where do you want to visit?</p>
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Where do you want to visit?</p>
+
+      <div class="container">
         <form name="myform" id="survey-form">
-            <label id="name-label" for="fName">Your Name</label><br>
-            <input id="name" type="text" name="fName" placeholder="what do people call you?" required><br>
-            <label id="email-label" for="email">Email</label><br>
-            <input id="email" type="email" name="email" placeholder="email?" required><br>
-            <label id="number-label" for="number">How many days?</label><br>
-            <input id="number" type="number" name="number" min="15" max="255" placeholder="numbers only" required><br>
+          <label id="name-label" for="fName">Your Name</label><br />
+          <input
+            id="name"
+            type="text"
+            name="fName"
+            placeholder="what do people call you?"
+            required
+          /><br />
+          <label id="email-label" for="email">Email</label><br />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="email?"
+            required
+          /><br />
+          <label id="number-label" for="number">How many days?</label><br />
+          <input
+            id="number"
+            type="number"
+            name="number"
+            min="15"
+            max="255"
+            placeholder="numbers only"
+            required
+          /><br />
 
-            <label for="places">Choose a place:</label><br>
-            <select id="dropdown" name="places" id="places">
-                <optgroup label="sea">
-                    <option value="bora">Bora Bora</option>
-                    <option value="tahiti">Tahiti</option>
-                </optgroup>
-                <optgroup label="mountain">
-                    <option value="Japan">Japan</option>
-                    <option value="Switzerland">Switzerland</option>
-                </optgroup>
-            </select>
-            <br>
-            <p>Please select your gender:</p>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
-            <input type="radio" id="other" name="gender" value="other">
+          <label for="places">Choose a place:</label><br />
+          <select id="dropdown" name="places" id="places">
+            <optgroup label="sea">
+              <option value="bora">Bora Bora</option>
+              <option value="tahiti">Tahiti</option>
+            </optgroup>
+            <optgroup label="mountain">
+              <option value="Japan">Japan</option>
+              <option value="Switzerland">Switzerland</option>
+            </optgroup>
+          </select>
+          <br />
+
+          <p>Select your choice:</p>
+          <p class="radio">
+            <input type="radio" id="PC" name="choice" value="PC" />
+            <label for="PC">PC</label><br />
+
+            <input type="radio" id="Console" name="choice" value="Console" />
+            <label for="Console">Console</label><br />
+
+            <input type="radio" id="other" name="choice" value="other" />
             <label for="other">Other</label>
-            <br><br>
+          </p>
 
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> I have a bike</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-            <label for="vehicle2">I have a car</label><br>
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-            <label for="vehicle3"> I have a boat</label><br>
-            <br>
+          <p class="checkbox">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+            <label for="vehicle1"> I have a bike</label><br />
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+            <label for="vehicle2">I have a car</label><br />
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+            <label for="vehicle3"> I have a boat</label>
+          </p>
 
-            <label for="review">Review of your visited place:</label>
-            <textarea id="review" name="w3review" rows="4" cols="40">
-
-            </textarea>
-            <br>
-            <input id="submit" type="submit" value="Submit">
-
-
+          <label for="review">Review of your visited place:</label>
+          <textarea id="review" name="w3review" rows="4" cols="30"> </textarea>
+          <br />
+          <input id="submit" type="submit" value="Submit" />
         </form>
+      </div>
     </div>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-</body>
-
+  </body>
 </html>
